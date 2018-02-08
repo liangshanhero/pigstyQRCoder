@@ -1,4 +1,4 @@
-package com.hombio.QRCode;
+package cn.edu.scau.cmi.pigstyQRCoder;
 import java.io.IOException;
 
 import com.hombio.layout.LayoutURL;

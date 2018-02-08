@@ -1,4 +1,4 @@
-﻿package com.hombio.QRCode;
+﻿package cn.edu.scau.cmi.pigstyQRCoder;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
