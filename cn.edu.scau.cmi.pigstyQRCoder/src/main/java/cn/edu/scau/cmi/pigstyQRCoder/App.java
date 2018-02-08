@@ -1,7 +1,7 @@
 package cn.edu.scau.cmi.pigstyQRCoder;
 import java.io.IOException;
 
-import com.hombio.layout.LayoutURL;
+import cn.edu.scau.cmi.hombio.layout.LayoutURL;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,7 +27,7 @@ public class App extends Application
 		Parent root = FXMLLoader.load(LayoutURL.get("main.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("条形码、二维码生成器");
+        stage.setTitle("一维条码、二维码生成器");
         stage.show();
         stage.setResizable(false);
 	}

@@ -1,4 +1,4 @@
-package com.hombio.service;
+package cn.edu.scau.cmi.hombio.service;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -6,10 +6,10 @@ import java.util.List;
 
 import javax.sql.rowset.CachedRowSet;
 
-import com.hombio.dao.PigDAO;
-import com.hombio.domain.Employee;
-import com.hombio.domain.PigHouse;
-import com.hombio.domain.Pigsty;
+import cn.edu.scau.cmi.hombio.dao.PigDAO;
+import cn.edu.scau.cmi.hombio.domain.Employee;
+import cn.edu.scau.cmi.hombio.domain.PigHouse;
+import cn.edu.scau.cmi.hombio.domain.Pigsty;
 
 public class PigService {
 	private PigDAO pigDAO;

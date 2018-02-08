@@ -1,4 +1,4 @@
-package com.hombio.dao;
+package cn.edu.scau.cmi.hombio.dao;
 
 import java.beans.PropertyVetoException;
 import java.io.IOException;

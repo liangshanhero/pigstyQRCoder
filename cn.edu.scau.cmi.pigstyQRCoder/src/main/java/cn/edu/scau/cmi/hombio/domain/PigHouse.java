@@ -1,4 +1,4 @@
-package com.hombio.domain;
+package cn.edu.scau.cmi.hombio.domain;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;

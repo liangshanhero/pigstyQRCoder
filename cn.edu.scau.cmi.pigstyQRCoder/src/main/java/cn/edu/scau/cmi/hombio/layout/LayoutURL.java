@@ -1,4 +1,4 @@
-package com.hombio.layout;
+package cn.edu.scau.cmi.hombio.layout;
 
 import java.net.URL;
 
