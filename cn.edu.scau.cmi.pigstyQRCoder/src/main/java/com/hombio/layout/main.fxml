@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hombio.controller.MainController">
+   <children>
+      <TabPane layoutX="-1.0" layoutY="-2.0" prefHeight="756.0" prefWidth="455.0">
+         <tabs>
+            <Tab fx:id="pigTab" closable="false" onSelectionChanged="#onSelectPigTab" text="猪栏/猪舍">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <TableView fx:id="pigstyTableView" prefHeight="717.0" prefWidth="448.0">
+                          <columns>
+                              <TableColumn fx:id="pigHouseCols" editable="false" minWidth="0.0" prefWidth="211.0" sortable="false" text="猪舍" />
+                              <TableColumn fx:id="pigstyNumCol" editable="false" prefWidth="108.0" sortable="false" text="猪栏编号" />
+                              <TableColumn fx:id="pigstyChoiceCol" prefWidth="75.0" text="选择" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="pigHouseTableView" layoutX="2.0" layoutY="1.0" prefHeight="716.0" prefWidth="455.0">
+                          <columns>
+                            <TableColumn fx:id="pigHouseCol" prefWidth="195.0" sortable="false" text="猪舍" />
+                            <TableColumn fx:id="numberCol" minWidth="7.0" prefWidth="62.0" sortable="false" text="编号" />
+                              <TableColumn fx:id="pigstyCol" prefWidth="75.0" sortable="false" text="猪栏" />
+                              <TableColumn fx:id="pigHousechoiceCol" prefWidth="75.0" sortable="false" text="选择" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="employeeTab" closable="false" onSelectionChanged="#onSelectEmployeeTab" text="员工">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="employeeTableView" layoutX="1.0" layoutY="-4.0" prefHeight="721.0" prefWidth="455.0">
+                          <columns>
+                            <TableColumn fx:id="employeeNameCol" editable="false" prefWidth="128.0" sortable="false" text="姓名" />
+                              <TableColumn fx:id="telephoneCol" editable="false" minWidth="0.0" prefWidth="132.0" sortable="false" text="手机号" />
+                              <TableColumn fx:id="employeeMemoCol" editable="false" prefWidth="138.0" sortable="false" text="备注" />
+                              <TableColumn fx:id="employeeChoiceCol" editable="false" minWidth="0.0" prefWidth="72.0" sortable="false" text="选择" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Button fx:id="refreshOrBack" layoutX="471.0" layoutY="176.0" mnemonicParsing="false" onAction="#onClickPigHouse" prefHeight="44.0" prefWidth="82.0" />
+      <Button fx:id="selectNoneBtn" layoutX="471.0" layoutY="102.0" mnemonicParsing="false" onAction="#onClickSelectNone" prefHeight="51.0" prefWidth="82.0" text="全不选" />
+      <Button fx:id="selectAllBtn" layoutX="471.0" layoutY="39.0" mnemonicParsing="false" onAction="#onClickSelectAll" prefHeight="51.0" prefWidth="82.0" text="全选" />
+      <Button layoutX="803.0" layoutY="664.0" mnemonicParsing="false" onAction="#formQRCode" prefHeight="51.0" prefWidth="95.0" text="生成二维码" />
+      <Button layoutX="684.0" layoutY="664.0" mnemonicParsing="false" onAction="#formBarcode" prefHeight="51.0" prefWidth="95.0" text="生成一维码" />
+      <TextField fx:id="targetFileTextFiled" editable="false" layoutX="461.0" layoutY="580.0" prefHeight="30.0" prefWidth="409.0" />
+      <Button layoutX="870.0" layoutY="580.0" mnemonicParsing="false" onAction="#onClickChooseFile" prefHeight="30.0" prefWidth="31.0" text="..." />
+      <Text layoutX="461.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请选择生成维码位置（必选）" />
+      <Text layoutX="464.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logo（可选）" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e3f1ff" height="170.0" layoutX="636.0" layoutY="293.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
+      <Button layoutX="825.0" layoutY="294.0" mnemonicParsing="false" onAction="#onClickChooseLogo" prefHeight="30.0" prefWidth="61.0" text=".选择" />
+      <ImageView fx:id="logoImageView" fitHeight="170.0" fitWidth="170.0" layoutX="636.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="825.0" layoutY="328.0" mnemonicParsing="false" onAction="#onClickClearLogo" prefHeight="30.0" prefWidth="61.0" text="去除" />
+      <Text layoutX="463.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="生成维码的图片格式（必选）" />
+      <ComboBox fx:id="imageFormatComboBox" layoutX="657.0" layoutY="496.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
