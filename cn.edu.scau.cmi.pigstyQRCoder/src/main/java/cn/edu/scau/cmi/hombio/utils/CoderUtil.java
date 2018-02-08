@@ -1,4 +1,4 @@
-﻿package cn.edu.scau.cmi.pigstyQRCoder;
+﻿package cn.edu.scau.cmi.hombio.utils;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;

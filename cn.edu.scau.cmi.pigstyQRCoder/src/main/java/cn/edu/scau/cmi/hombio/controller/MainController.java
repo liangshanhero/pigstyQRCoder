@@ -14,7 +14,7 @@ import cn.edu.scau.cmi.hombio.domain.Employee;
 import cn.edu.scau.cmi.hombio.domain.PigHouse;
 import cn.edu.scau.cmi.hombio.domain.Pigsty;
 import cn.edu.scau.cmi.hombio.service.PigService;
-import cn.edu.scau.cmi.pigstyQRCoder.CoderUtil;
+import cn.edu.scau.cmi.hombio.utils.CoderUtil;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
