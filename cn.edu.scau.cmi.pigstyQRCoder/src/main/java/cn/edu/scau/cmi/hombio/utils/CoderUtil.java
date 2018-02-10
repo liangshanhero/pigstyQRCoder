@@ -41,7 +41,7 @@ public class CoderUtil {
 	private static int fontSize;
 	
 
-	
+//	一维条码格式
 	private static void initBarcodeParameter(int size) {
 		increRate = 1.8;
 		fontSize = 10*size;
@@ -50,7 +50,7 @@ public class CoderUtil {
 		codeHeight = 30*size;
 		barcodeFormat = BarcodeFormat.CODE_128;
 	}
-	
+//	二维条码格式
 	private static void initQRCodeParameter(int size) {
 		increRate = 1+(double)size/10;
 		fontSize = 10*size;
@@ -65,12 +65,11 @@ public class CoderUtil {
 	 * @param content 条码内容
 	 * @param logoImg 二维码logo
 	 * @param isCompressLogoImg 
-	 * @param memo 条码下面文字
+	 * @param memo 条码下面的备注文字
 	 * @return
 	 * @throws Exception
 	 */
-	private static BufferedImage createQRImage(
-			String content, File logoImg, boolean isCompressLogoImg, String memo) throws Exception {
+	private static BufferedImage createQRImage(String content, File logoImg, boolean isCompressLogoImg, String memo) throws Exception {
 		
 		Hashtable<EncodeHintType, Object> hints = new Hashtable<EncodeHintType, Object>();
 		
@@ -82,17 +81,13 @@ public class CoderUtil {
 		hints.put(EncodeHintType.MARGIN, 1);
 //		二维条码的区域
 //		获得编码后的位矩阵
-		BitMatrix bitMatrix = new MultiFormatWriter().
-				encode(content, barcodeFormat, codeWidth, codeHeight, hints);
-		
-
+		BitMatrix bitMatrix = new MultiFormatWriter().encode(content, barcodeFormat, codeWidth, codeHeight, hints);
 		if(memo == null) {
 			increRate = 1;
 		}
-		
 
 		BufferedImage image = new BufferedImage(codeWidth, (int)(codeHeight*increRate), BufferedImage.TYPE_INT_RGB);
-		
+//		设置图片的颜色
 		Graphics2D graphics2d = image.createGraphics();
 		graphics2d.setColor(Color.white);
 		graphics2d.fillRect(0, 0, image.getWidth(), image.getHeight());
@@ -132,7 +127,6 @@ public class CoderUtil {
 		graphics2D.dispose();
 	}
 	
-	
 //	在生成的二维条码中间插入图片
 	private static void insertImageIntoQR(BufferedImage sourceBufferedImage, File logImgFile, boolean needCompress) throws Exception {
 //		File file = new File(logImg);
@@ -163,7 +157,6 @@ public class CoderUtil {
 		int y = (codeWidth - height) / 2;
 		graph.drawImage(src, x, y, width, height, null);
 		
-		
 		Shape shape = new RoundRectangle2D.Float(x, y, width, width, 6, 6);
 		graph.draw(shape);
 		graph.dispose();
@@ -178,9 +171,9 @@ public class CoderUtil {
 		}
 	}
 
-//	利用内容、QR目录、文件、二维码中插入的目录、是否需要压缩创建二维码,design by 梁早清
-	public static  BufferedImage encode(String qrContent, File logImgFile, boolean needCompress, String memo, boolean codeFormat, int size) throws Exception {
-		if(codeFormat) {
+//	条码内容、条码目录、条码中插入的log图片文件、条码格式（一维还是二维）条码、二维码中插入的目录、是否需要压缩创建二维码,design by 梁早清
+	public static  BufferedImage encode(String qrContent, File logImgFile, boolean needCompress, String memo, boolean isQRCode, int size) throws Exception {
+		if(isQRCode) {
 			initQRCodeParameter(size);
 		}else {
 			initBarcodeParameter(size);

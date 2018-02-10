@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class App extends Application
+public class ApplicationClient extends Application
 {
 	
 	public static Stage getCoderStage() throws IOException {
