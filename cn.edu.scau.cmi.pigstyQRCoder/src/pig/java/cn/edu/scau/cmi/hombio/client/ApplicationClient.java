@@ -1,4 +1,4 @@
-package cn.edu.scau.cmi.pigstyQRCoder;
+package cn.edu.scau.cmi.hombio.client;
 import java.io.IOException;
 
 import cn.edu.scau.cmi.hombio.layout.LayoutURL;
