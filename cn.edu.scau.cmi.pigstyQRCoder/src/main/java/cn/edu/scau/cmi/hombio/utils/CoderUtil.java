@@ -162,15 +162,6 @@ public class CoderUtil {
 		graph.dispose();
 	}
 
-
-	private static void mkdirs(String destPath) {
-		File file =new File(destPath);    
-		//当文件夹不存在时，mkdirs会自动创建多层目录，区别于mkdir．(mkdir如果父目录不存在则会抛出异常)
-		if (!file.exists() && !file.isDirectory()) {
-			file.mkdirs();
-		}
-	}
-
 //	条码内容、条码目录、条码中插入的log图片文件、条码格式（一维还是二维）条码、二维码中插入的目录、是否需要压缩创建二维码,design by 梁早清
 	public static  BufferedImage encode(String qrContent, File logImgFile, boolean needCompress, String memo, boolean isQRCode, int size) throws Exception {
 		if(isQRCode) {

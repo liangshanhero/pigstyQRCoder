@@ -1,4 +1,4 @@
-package cn.edu.scau.cmi.pigstyQRCoder;
+package cn.edu.scau.cmi.hombio.client;
 import java.io.IOException;
 
 import cn.edu.scau.cmi.hombio.layout.LayoutURL;
@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class ApplicationClient extends Application
+public class PigstyApplication extends Application
 {
 	
 	public static Stage getCoderStage() throws IOException {
